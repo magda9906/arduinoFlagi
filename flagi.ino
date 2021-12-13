@@ -63,19 +63,14 @@ void loop()
   delay(5000);
   tripleHorizontalFlag(redColor, whiteColor, blueColor); //luxembourgFlag();
   delay(5000);
+  denmarkFlag(); // Denmark flag
+  delay(5000);
   //Latvia flag
   lightAll(204, 0, 0);
   int latv[] = {0, 0, 1, 1, 0, 0};
   lightHorizontalStripes(latv, 255, 255, 255);
   delay(5000);
 
-  // Switzerland flag
-  lightAll(255, 0, 0); 
-  int switz1[] = {0, 0, 0, 1, 0, 0};
-  lightHorizontalStripes(switz1, 255, 255, 255);
-  int switz2[] = {0, 0, 0, 1, 0, 0, 0, 0, 0};
-  lightVerticalStripes(switz2, 255, 255, 255);
-  delay(500);
 //  pixels.clear(); // Set all pixel colors to 'off'  
   }
 
@@ -106,9 +101,6 @@ void tripleHorizontalFlag(uint32_t Color1, uint32_t Color2, uint32_t Color3){
         pixels.setPixelColor(i, Color3);
         pixels.show();
     }
-
-  denmarkFlag(); // Denmark flag
-  delay(5000);
   //  pixels.clear(); // Set all pixel colors to 'off'
 
 }
