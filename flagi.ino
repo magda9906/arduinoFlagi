@@ -58,6 +58,10 @@ void loop() {
   delay(5000);
   verticalTripleFlag(blueColor, yellowColor, redColor);  //romaniaFlag();
   delay(5000);
+  tripleHorizontalFlag(whiteColor, blueColor, redColor); //russiaFlag();
+  delay(5000);
+  doubleHorizontalFlag(redColor, whiteColor); //monacoFlag();
+  delay(5000);
 
 
   // Switzerland flag
