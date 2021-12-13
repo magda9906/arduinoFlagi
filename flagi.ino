@@ -70,41 +70,12 @@ void loop()
   int latv[] = {0, 0, 1, 1, 0, 0};
   lightHorizontalStripes(latv, 255, 255, 255);
   delay(5000);
-
+  tripleHorizontalFlag(redColor, whiteColor, redColor);
+  delay(5000);
 //  pixels.clear(); // Set all pixel colors to 'off'  
   }
 
-void doubleHorizontalFlag(uint32_t Color1, uint32_t Color2){
-    for(int i=0; i<27; i++) { 
-        pixels.setPixelColor(i, Color1);
-        pixels.show();   // Send the updated pixel colors to the hardware.
-    }
-
-    for(int i=27; i<55; i++){
-        pixels.setPixelColor(i, Color2);
-        pixels.show();
-    }
-}
-
-void tripleHorizontalFlag(uint32_t Color1, uint32_t Color2, uint32_t Color3){
-    for(int i=0; i<18; i++) { 
-        pixels.setPixelColor(i, Color1);
-        pixels.show();   // Send the updated pixel colors to the hardware.
-    }
-
-    for(int i=18; i<36; i++){
-        pixels.setPixelColor(i, Color2);
-        pixels.show();
-    }
-
-    for(int i=36; i<54; i++){
-        pixels.setPixelColor(i, Color3);
-        pixels.show();
-    }
-  //  pixels.clear(); // Set all pixel colors to 'off'
-
-}
-
+// Dwa poziome pasy
 void doubleHorizontalFlag(uint32_t Color1, uint32_t Color2)
 {
   for (int i = 0; i < 27; i++)
@@ -120,6 +91,7 @@ void doubleHorizontalFlag(uint32_t Color1, uint32_t Color2)
   }
 }
 
+// Trzy poziome pasy
 void tripleHorizontalFlag(uint32_t Color1, uint32_t Color2, uint32_t Color3)
 {
   for (int i = 0; i < 18; i++)
@@ -141,6 +113,7 @@ void tripleHorizontalFlag(uint32_t Color1, uint32_t Color2, uint32_t Color3)
   }
 }
 
+// Trzy pionowe pasy
 void verticalTripleFlag(uint32_t Color1, uint32_t Color2, uint32_t Color3)
 {
   for (int i = 0; i < 7; i++)
@@ -164,7 +137,7 @@ void verticalTripleFlag(uint32_t Color1, uint32_t Color2, uint32_t Color3)
   }
 }
 
-//Poziome pasy
+//Poziome paski
 void lightHorizontalStripes(int tab[], int red_value, int green_value, int blue_value)
 {
 
@@ -190,7 +163,7 @@ void lightHorizontalStripes(int tab[], int red_value, int green_value, int blue_
   }
 }
 
-//Pionowe pasy
+//Pionowe paski
 void lightVerticalStripes(int tab[], int red_value, int green_value, int blue_value)
 {
 
