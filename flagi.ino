@@ -45,6 +45,14 @@ void loop() {
   delay(5000);
   verticalTripleFlag(greenColor, whiteColor, redColor);  //italyFlag();
   delay(5000);
+
+  // Switzerland flag
+  lightAll(255, 0, 0); 
+  int switz1[] = {0, 0, 0, 1, 0, 0};
+  lightHorizontalStripes(switz1, 255, 255, 255);
+  int switz2[] = {0, 0, 0, 1, 0, 0, 0, 0, 0};
+  lightVerticalStripes(switz2, 255, 255, 255);
+  delay(500);
 //  pixels.clear(); // Set all pixel colors to 'off'  
   }
 
@@ -134,3 +142,52 @@ void italyFlag(){
     
     pixels.show();   // Send the updated pixel colors to the hardware.
 }}
+
+//Poziome pasy
+void lightHorizontalStripes(int tab[], int red_value, int green_value, int blue_value) {
+
+  int led_numbers [6] = {0, 9, 18, 27, 36, 45};
+
+  for (int i = 0; i < 6; i++) {
+    if (tab[i] == 1) {
+      int n = led_numbers[i];
+      pixels.setPixelColor(n, pixels.Color(red_value, green_value, blue_value));
+      pixels.setPixelColor(n+1, pixels.Color(red_value, green_value, blue_value));
+      pixels.setPixelColor(n+2, pixels.Color(red_value, green_value, blue_value));
+      pixels.setPixelColor(n+3, pixels.Color(red_value, green_value, blue_value));
+      pixels.setPixelColor(n+4, pixels.Color(red_value, green_value, blue_value));
+      pixels.setPixelColor(n+5, pixels.Color(red_value, green_value, blue_value));
+      pixels.setPixelColor(n+6, pixels.Color(red_value, green_value, blue_value));
+      pixels.setPixelColor(n+7, pixels.Color(red_value, green_value, blue_value));
+      pixels.setPixelColor(n+8, pixels.Color(red_value, green_value, blue_value));
+
+      pixels.show();
+    }
+  }
+}
+
+//Pionowe pasy
+void lightVerticalStripes(int tab[], int red_value, int green_value, int blue_value) {
+
+  for (int i = 0; i < 9; i++) {
+    if (tab[i] == 1) {
+      pixels.setPixelColor(i, pixels.Color(red_value, green_value, blue_value));
+      pixels.setPixelColor(i+9, pixels.Color(red_value, green_value, blue_value));
+      pixels.setPixelColor(i+18, pixels.Color(red_value, green_value, blue_value));
+      pixels.setPixelColor(i+27, pixels.Color(red_value, green_value, blue_value));
+      pixels.setPixelColor(i+36, pixels.Color(red_value, green_value, blue_value));
+      pixels.setPixelColor(i+45, pixels.Color(red_value, green_value, blue_value));
+
+      pixels.show();
+    }
+  }
+}
+
+void lightAll(int red_value, int green_value, int blue_value) {
+
+  for (int i = 0; i < 54; i++) {
+    pixels.setPixelColor(i, pixels.Color(red_value, green_value, blue_value));
+
+    pixels.show();
+  }
+}
