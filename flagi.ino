@@ -33,6 +33,7 @@ uint32_t greenColor = pixels.Color(0, 255, 0);
 uint32_t blueColor = pixels.Color(0, 0, 255);
 uint32_t whiteColor = pixels.Color(255, 255, 255);
 uint32_t orangeColor = pixels.Color(252, 53, 3);
+uint32_t yellowColor = pixels.Color(255, 255, 0);
 void loop() {
 
   verticalTripleFlag(blueColor, whiteColor, redColor);  // France
@@ -45,6 +46,19 @@ void loop() {
   delay(5000);
   verticalTripleFlag(greenColor, whiteColor, redColor);  //italyFlag();
   delay(5000);
+  tripleHorizontalFlag(redColor, whiteColor, greenColor); //hungaryFlag();
+  delay(5000);
+  doubleHorizontalFlag(blueColor, yellowColor); //ukraineFlag();
+  //Sweden flag
+  lightAll(0, 0, 255);
+  int swed1[] = {0, 0, 0, 1, 0, 0};
+  int swed2[] = {0, 0, 0, 1, 0, 0, 0, 0, 0};
+  lightHorizontalStripes(swed1, 255, 255, 0);
+  lightVerticalStripes(swed2, 255, 255, 0);
+  delay(5000);
+  verticalTripleFlag(blueColor, yellowColor, redColor);  //romaniaFlag();
+  delay(5000);
+
 
   // Switzerland flag
   lightAll(255, 0, 0); 
@@ -64,6 +78,23 @@ void doubleHorizontalFlag(uint32_t Color1, uint32_t Color2){
 
     for(int i=27; i<55; i++){
         pixels.setPixelColor(i, Color2);
+        pixels.show();
+    }
+}
+
+void tripleHorizontalFlag(uint32_t Color1, uint32_t Color2, uint32_t Color3){
+    for(int i=0; i<18; i++) { 
+        pixels.setPixelColor(i, Color1);
+        pixels.show();   // Send the updated pixel colors to the hardware.
+    }
+
+    for(int i=18; i<36; i++){
+        pixels.setPixelColor(i, Color2);
+        pixels.show();
+    }
+
+    for(int i=36; i<54; i++){
+        pixels.setPixelColor(i, Color3);
         pixels.show();
     }
 }
