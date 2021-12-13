@@ -40,28 +40,29 @@ void loop()
 {
   verticalTripleFlag(blueColor, whiteColor, redColor); // France
   delay(5000);
-  verticalTripleFlag(greenColor, whiteColor, orangeColor); //irleandFlag();
+  verticalTripleFlag(greenColor, whiteColor, orangeColor); //Irleand
   delay(5000);
-  doubleHorizontalFlag(whiteColor, redColor); //polandFlag();
+  doubleHorizontalFlag(whiteColor, redColor); //Poland();
   delay(5000);
   czechFlag();
   delay(5000);
-  verticalTripleFlag(greenColor, whiteColor, redColor); //italyFlag();
+  verticalTripleFlag(greenColor, whiteColor, redColor); //Italy
   delay(5000);
-  tripleHorizontalFlag(redColor, whiteColor, greenColor); //hungaryFlag();
+  tripleHorizontalFlag(redColor, whiteColor, greenColor); //Hungary
   delay(5000);
-  doubleHorizontalFlag(blueColor, yellowColor); //ukraineFlag();
+  doubleHorizontalFlag(blueColor, yellowColor); //Ukraine
+  delay(5000);
   swedenFlag(); //Sweden flag
   delay(5000);
-  verticalTripleFlag(blueColor, yellowColor, redColor); //romaniaFlag();
+  verticalTripleFlag(blueColor, yellowColor, redColor); //Romania
   delay(5000);
-  tripleHorizontalFlag(whiteColor, blueColor, redColor); //russiaFlag();
+  tripleHorizontalFlag(whiteColor, blueColor, redColor); //Russia
   delay(5000);
-  doubleHorizontalFlag(redColor, whiteColor); //monacoFlag();
+  doubleHorizontalFlag(redColor, whiteColor); //Monaco
   delay(5000);
-  tripleHorizontalFlag(yellowColor, greenColor, redColor); //lithuaniaFlag();
+  tripleHorizontalFlag(yellowColor, greenColor, redColor); //Lithuania
   delay(5000);
-  tripleHorizontalFlag(redColor, whiteColor, blueColor); //luxembourgFlag();
+  tripleHorizontalFlag(redColor, whiteColor, blueColor); //Luxembourg
   delay(5000);
   //Latvia flag
   lightAll(204, 0, 0);
@@ -75,7 +76,7 @@ void loop()
   lightHorizontalStripes(switz1, 255, 255, 255);
   int switz2[] = {0, 0, 0, 1, 0, 0, 0, 0, 0};
   lightVerticalStripes(switz2, 255, 255, 255);
-  delay(500);
+  delay(5000);
 //  pixels.clear(); // Set all pixel colors to 'off'  
   }
 
@@ -91,42 +92,6 @@ void doubleHorizontalFlag(uint32_t Color1, uint32_t Color2){
     }
 }
 
-void tripleHorizontalFlag(uint32_t Color1, uint32_t Color2, uint32_t Color3){
-    for(int i=0; i<18; i++) { 
-        pixels.setPixelColor(i, Color1);
-        pixels.show();   // Send the updated pixel colors to the hardware.
-    }
-
-    for(int i=18; i<36; i++){
-        pixels.setPixelColor(i, Color2);
-        pixels.show();
-    }
-
-    for(int i=36; i<54; i++){
-        pixels.setPixelColor(i, Color3);
-        pixels.show();
-    }
-
-  denmarkFlag(); // Denmark flag
-  delay(5000);
-  //  pixels.clear(); // Set all pixel colors to 'off'
-
-}
-
-void doubleHorizontalFlag(uint32_t Color1, uint32_t Color2)
-{
-  for (int i = 0; i < 27; i++)
-  {
-    pixels.setPixelColor(i, Color1);
-    pixels.show(); // Send the updated pixel colors to the hardware.
-  }
-
-  for (int i = 27; i < 55; i++)
-  {
-    pixels.setPixelColor(i, Color2);
-    pixels.show();
-  }
-}
 
 void tripleHorizontalFlag(uint32_t Color1, uint32_t Color2, uint32_t Color3)
 {
@@ -231,21 +196,7 @@ void lightAll(int red_value, int green_value, int blue_value)
 
 void czechFlag()
 {
-  for (int i = 0; i < 27; i++)
-  { // For each pixel...
-
-    // pixels.Color() takes RGB values, from 0,0,0 up to 255,255,255
-    // Here we're using a moderately bright green color:
-    pixels.setPixelColor(i, pixels.Color(100, 100, 100));
-
-    pixels.show(); // Send the updated pixel colors to the hardware.
-  }
-
-  for (int i = 27; i < 55; i++)
-  {
-    pixels.setPixelColor(i, pixels.Color(252, 0, 0));
-    pixels.show();
-  }
+  doubleHorizontalFlag(whiteColor, redColor);
 
   for (int i = 0; i < 7; i++)
   {
