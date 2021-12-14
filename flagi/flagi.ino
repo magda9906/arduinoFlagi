@@ -38,52 +38,44 @@ uint32_t yellowColor = pixels.Color(255, 255, 0);
 
 void loop()
 {
+  tripleHorizontalFlag(redColor, whiteColor, redColor);  // Austria
+  delay(5000);
+  tripleHorizontalFlag(whiteColor, greenColor, redColor); //Bulgaria
+  delay(5000);
+  czechFlag(); // Czech Republic
+  delay(5000); 
+  denmarkFlag(); // Denmark
+  delay(5000);
+  finlandFlag(); // Finland
+  delay(5000);
   verticalTripleFlag(blueColor, whiteColor, redColor); // France
   delay(5000);
   verticalTripleFlag(greenColor, whiteColor, orangeColor); //Irleand
-  delay(5000);
-  doubleHorizontalFlag(whiteColor, redColor); //Poland();
-  delay(5000);
-  czechFlag();
-  delay(5000);
-  verticalTripleFlag(greenColor, whiteColor, redColor); //Italy
-  delay(5000);
-  tripleHorizontalFlag(redColor, whiteColor, greenColor); //Hungary
-  delay(5000);
-  doubleHorizontalFlag(blueColor, yellowColor); //Ukraine
-  delay(5000);
-  swedenFlag(); //Sweden flag
-  delay(5000);
-  verticalTripleFlag(blueColor, yellowColor, redColor); //Romania
-  delay(5000);
-  tripleHorizontalFlag(whiteColor, blueColor, redColor); //Russia
-  delay(5000);
-  doubleHorizontalFlag(redColor, whiteColor); //Monaco
   delay(5000);
   tripleHorizontalFlag(yellowColor, greenColor, redColor); //Lithuania
   delay(5000);
   tripleHorizontalFlag(redColor, whiteColor, blueColor); //Luxembourg
   delay(5000);
-  denmarkFlag(); // Denmark flag
+  doubleHorizontalFlag(redColor, whiteColor); //Monaco
   delay(5000);
-  //Latvia flag
-  lightAll(204, 0, 0);
-  int latv[] = {0, 0, 1, 1, 0, 0};
-  lightHorizontalStripes(latv, 255, 255, 255);
+  tripleHorizontalFlag(blueColor, whiteColor, redColor); // Netherlands
   delay(5000);
-
-  // Switzerland flag
-  lightAll(255, 0, 0); 
-  int switz1[] = {0, 0, 0, 1, 0, 0};
-  lightHorizontalStripes(switz1, 255, 255, 255);
-  int switz2[] = {0, 0, 0, 1, 0, 0, 0, 0, 0};
-  lightVerticalStripes(switz2, 255, 255, 255);
+  doubleHorizontalFlag(whiteColor, redColor); //Poland();
   delay(5000);
-  
-  tripleHorizontalFlag(redColor, whiteColor, redColor);  //Austria
+  tripleHorizontalFlag(whiteColor, blueColor, redColor); //Russia
+  delay(5000);
+  verticalTripleFlag(blueColor, yellowColor, redColor); //Romania
+  delay(5000);
+  swedenFlag(); //Sweden 
+  delay(5000);
+  doubleHorizontalFlag(blueColor, yellowColor); //Ukraine
+  delay(5000);
+  tripleHorizontalFlag(redColor, whiteColor, greenColor); // Hungary
+  delay(5000);
+  verticalTripleFlag(greenColor, whiteColor, redColor); //Italy
   delay(5000);
 //  pixels.clear(); // Set all pixel colors to 'off'  
-  }
+}
   
 // Dwa poziome pasy
 void doubleHorizontalFlag(uint32_t Color1, uint32_t Color2)
@@ -254,7 +246,6 @@ void swedenFlag ()
   int swed2[] = {0, 0, 0, 1, 0, 0, 0, 0, 0};
   lightHorizontalStripes(swed1, 255, 255, 0);
   lightVerticalStripes(swed2, 255, 255, 0);
-  delay(5000);
 }
 
 void denmarkFlag()
@@ -263,6 +254,14 @@ void denmarkFlag()
   int den1[] = {0, 0, 0, 1, 0, 0};
   lightHorizontalStripes(den1, 255, 255, 255);
   int den2[] = {0, 0, 0, 1, 0, 0, 0, 0, 0};
-  lightVerticalStripes(2, 255, 255, 255);
-  delay(500);
+  lightVerticalStripes(den2, 255, 255, 255);
+}
+
+void finlandFlag() 
+{
+  lightAll(255, 255, 255);
+  int fin1 []= {0, 0, 1, 1, 0, 0};
+  lightHorizontalStripes(fin1, 0, 47, 108);
+  int fin2 []= {0, 0, 1, 1, 0, 0, 0, 0, 0};
+  lightVerticalStripes(fin2, 0, 47, 108);
 }
